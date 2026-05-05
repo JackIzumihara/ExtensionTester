@@ -10,4 +10,5 @@ buttontest.style.top = 10;
 function removeAdPanelTest(){
     annoyingAdPanel.style.display = "none";
     console.log("panel maybe removed");
+    alert("did this work?");
 }

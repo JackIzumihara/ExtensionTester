@@ -12,7 +12,8 @@
     {
       "js": ["scripts/content.js"],
       "matches": [
-        "https://youtube.com/*"
+        "https://youtube.com/*",
+        "https://developer.chrome.com/docs/extensions/*"
       ]
     }
   ]
