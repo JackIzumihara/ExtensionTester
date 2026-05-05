@@ -9,7 +9,7 @@ function createTest(){
 }
 
 
-setTimeout(createTest, 5000)
+setTimeout(createTest, 5000);
 
 function removeAdPanelTest(){
     annoyingAdPanel.style.display = "none";
