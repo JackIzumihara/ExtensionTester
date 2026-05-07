@@ -8,13 +8,15 @@
         "default_icon": "iconTest.png"
     },
 
+    "background":{
+      "service_worker": "scripts/content.js"
+    },
+
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
       "matches": [
-        "https://youtube.com/*",
-        "https://developer.chrome.com/docs/extensions/*",
-        "https://google.com/*"
+        "<all_urls>"
       ]
     }
   ]
