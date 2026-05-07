@@ -7,6 +7,7 @@ function createTest(){
 
 setTimeout(createTest, 5000);
 setInterval(removeAdPanelTest, 1);
+setInterval(recieveAdActive, 1);
 
 function removeAdPanelTest(){
     annoyingAdPanel.style.display = "none";
@@ -14,4 +15,10 @@ function removeAdPanelTest(){
     alert("did this work?");
 }
 
-function
+function recieveAdActive(){
+        if(ytp-play-progress.style.backgroundColor == "rgb(255, 204, 0)"){
+            alert("AD IS PLAYING");
+        }else{
+            console.log("no ad playing");
+        }
+}
