@@ -6,7 +6,7 @@ function createTest(){
 }
 
 setTimeout(createTest, 5000);
-setInterval(removeAdPanelTest, 1);
+setInterval(removeAdPanelTest, 10000);
 setInterval(recieveAdActive, 1);
 
 function removeAdPanelTest(){
