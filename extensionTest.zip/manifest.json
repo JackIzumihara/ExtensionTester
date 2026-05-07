@@ -9,7 +9,7 @@
     },
 
     "background":{
-      "service_worker": "scripts/content.js"
+      "service_worker": "scripts/service_worker.js"
     },
 
   "content_scripts": [
