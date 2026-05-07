@@ -16,7 +16,7 @@ function removeAdPanelTest(){
 }
 
 function recieveAdActive(){
-        if(ytp-play-progress.style.backgroundColor == "rgb(255, 204, 0)"){
+        if(ytp-play-progress.css("background-color") == "rgb(255, 204, 0)"){
             alert("AD IS PLAYING");
         }else{
             console.log("no ad playing");
