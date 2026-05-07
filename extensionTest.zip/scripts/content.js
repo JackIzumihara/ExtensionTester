@@ -1,18 +1,17 @@
 let annoyingAdPanel = document.getElementById('panels');
+let progressBar = document.getElementsByClassName('html5-main-video')
 
 function createTest(){
-    const buttontest = document.createElement('p');
-    buttontest.innerText = "contentScripts click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me ";
-    document.body.appendChild(buttontest);
-    buttontest.style.left = 10;
-    buttontest.style.top = 10;
+    alert("Extension has loaded successfully");
 }
 
-
 setTimeout(createTest, 5000);
+setInterval(removeAdPanelTest, 1);
 
 function removeAdPanelTest(){
     annoyingAdPanel.style.display = "none";
     console.log("panel maybe removed");
     alert("did this work?");
 }
+
+function
