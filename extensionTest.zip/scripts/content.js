@@ -5,9 +5,9 @@ let toggleVar = 1;
 function createTest(){
     alert("Extension has loaded successfully");
 }
-let createTestToggle = 0;
-let removeAdPanelToggle = 0;
-let adActiveTest = 0;
+let createTestToggle = setTimeout(createTest, 5000);
+let removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
+let adActiveTest = setInterval(recieveAdActive, 1);
 
 function toggleEverything(){
     if(toggleVar == 1){
