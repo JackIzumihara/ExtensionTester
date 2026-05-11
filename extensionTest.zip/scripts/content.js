@@ -1,13 +1,28 @@
 let annoyingAdPanel = document.getElementById('panels');
-let progressBar = document.getElementsByClassName('html5-main-video')
+let progressBar = document.getElementsByClassName('html5-main-video');
+let toggleVar = 1;
 
 function createTest(){
     alert("Extension has loaded successfully");
 }
 
-setTimeout(createTest, 5000);
-setInterval(removeAdPanelTest, 10000);
-setInterval(recieveAdActive, 1);
+function toggleEverything(){
+    if(toggleVar == 1){
+        clearInterval(adActiveTest);
+        clearInterval(removeAdPanelToggle);
+        clearInterval(createTestToggle);
+        toggleVar = 1;
+    }else{
+        toggleVar = 0;
+        let createTestToggle = setTimeout(createTest, 5000);
+        let removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
+        let adActiveTest = setInterval(recieveAdActive, 1);
+    }
+}
+
+let createTestToggle = setTimeout(createTest, 5000);
+let removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
+let adActiveTest = setInterval(recieveAdActive, 1);
 
 function removeAdPanelTest(){
     annoyingAdPanel.style.display = "none";
