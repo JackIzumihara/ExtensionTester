@@ -1,5 +1,5 @@
 let annoyingAdPanel = document.getElementById('panels');
-let progressBar = document.getElementsByClassName('html5-main-video');
+let progressBar = document.getElementsByClassName('ytp-scrubber-button ytp-swatch-background-color');
 let toggleVar = 1;
 
 function createTest(){
@@ -7,7 +7,7 @@ function createTest(){
 }
 let createTestToggle = setTimeout(createTest, 5000);
 let removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
-let adActiveTest = setInterval(recieveAdActive, 1);
+let adActiveTest = setInterval(recieveAdActive, 10000);
 
 function toggleEverything(){
     if(toggleVar == 1){
@@ -30,7 +30,7 @@ function removeAdPanelTest(){
 }
 
 function recieveAdActive(){
-        if(ytp-play-progress.css("background-color") == "rgb(255, 204, 0)"){
+        if(document.progressBar.style.backgroundColor = "#fc0"){
             alert("AD IS PLAYING");
         }else{
             console.log("no ad playing");
