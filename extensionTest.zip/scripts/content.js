@@ -11,15 +11,15 @@ let adActiveTest = 0;
 
 function toggleEverything(){
     if(toggleVar == 1){
-        clearInterval(adActiveTest);
-        clearInterval(removeAdPanelToggle);
-        clearInterval(createTestToggle);
-        toggleVar = 1;
-    }else{
         toggleVar = 0;
         createTestToggle = setTimeout(createTest, 5000);
         removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
         adActiveTest = setInterval(recieveAdActive, 1);
+    }else{
+        clearInterval(adActiveTest);
+        clearInterval(removeAdPanelToggle);
+        clearInterval(createTestToggle);
+        toggleVar = 1;
     }
 }
 
