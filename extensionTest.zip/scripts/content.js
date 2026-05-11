@@ -14,9 +14,9 @@ function toggleEverything(){
         toggleVar = 1;
     }else{
         toggleVar = 0;
-        let createTestToggle = setTimeout(createTest, 5000);
-        let removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
-        let adActiveTest = setInterval(recieveAdActive, 1);
+        createTestToggle = setTimeout(createTest, 5000);
+        removeAdPanelToggle = setInterval(removeAdPanelTest, 10000);
+        adActiveTest = setInterval(recieveAdActive, 1);
     }
 }
 
