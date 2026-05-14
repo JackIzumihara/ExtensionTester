@@ -28,7 +28,7 @@ function unmute(){
     gainNode.gain.value = 1;
 }
 
-function recieveAdActive(){
+function recieveAdActive(){ //yo this is lwk useless bc of the skipAd thing
         if (document.querySelector("div.ad-showing")) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
             gainNode.gain.value = 0;
         }
@@ -53,8 +53,8 @@ function skipAd() { //also found this function on stackoverflow, might work but 
         }
 
         // Seek through unskippable ads
-        const video = document.querySelector('video');
-        if (video && document.querySelector('.ad-showing, .ad-interrupting')) {
-            video.currentTime = video.duration - 0.1;
-        }
+//        const video = document.querySelector('video');
+//        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
+//           video.currentTime = video.duration - 0.1;
+//       }
     }
