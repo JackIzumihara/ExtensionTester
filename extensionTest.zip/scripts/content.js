@@ -16,10 +16,12 @@ function ToggleEverything(){
         toggleVar = 0;
         alert("disabled adskipper & tab muter");
     }else if(toggleVar = 0){
-        adSkipper = setInterval(skipAd, 1);
+        adSkipper = setInterval(skipAd, 6000);
         adActiveTest = setInterval(recieveAdActive, 1);
         toggleVar = 1;
         alert("enabled adskipper & muter");
+    }else{
+
     }
 }
 
