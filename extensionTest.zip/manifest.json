@@ -1,7 +1,7 @@
 {
-    "name": "ExtensionTest",
-    "description": "Here just to test extension making",
-    "version": "1.0",
+    "name": "BetterAntiAdvertisement",
+    "description": "Will automatically skip and mute ads!",
+    "version": "1.1",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html",
