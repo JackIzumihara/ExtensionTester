@@ -53,8 +53,8 @@ function skipAd() { //also found this function on stackoverflow, might work but 
         }
 
         // Seek through unskippable ads
-//        const video = document.querySelector('video');
-//        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
+        const video = document.querySelector('video');
+        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
 //           video.currentTime = video.duration - 0.1;
-//       }
+       }
     }
