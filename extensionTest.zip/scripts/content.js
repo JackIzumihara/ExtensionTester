@@ -9,6 +9,20 @@ function createTest(){
     alert("maybe worked: " + site);
 }
 
+function ToggleEverything(){
+    if(toggleVar = 1){
+        clearInterval(adSkipper);
+        clearInterval(adActiveTest);
+        toggleVar = 0;
+        alert("disabled adskipper & tab muter");
+    }else if(toggleVar = 0){
+        adSkipper = setInterval(skipAd, 1);
+        adActiveTest = setInterval(recieveAdActive, 1);
+        toggleVar = 1;
+        alert("enabled adskipper & muter");
+    }
+}
+
 let createTestToggle = setTimeout(createTest, 5000);
 let adActiveTest = setInterval(recieveAdActive, 1);
 let adSkipper = setInterval(skipAd, 1);
@@ -55,6 +69,6 @@ function skipAd() { //also found this function on stackoverflow, might work but 
         // Seek through unskippable ads
         const video = document.querySelector('video');
         if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
-//           video.currentTime = video.duration - 0.1;
+           video.currentTime = video.duration - 5;
        }
     }
