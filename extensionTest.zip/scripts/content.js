@@ -13,6 +13,7 @@ function createTest(){
     toggler.addEventListener("click", (e) => {ToggleEverything()});
     toggler.style.left = "100px";
     toggler.style.top = "100px";
+    toggler.style.zIndex = "10000000"; //this is probably first now
     document.getElementById("body").appendChild(toggler);
 
 }
