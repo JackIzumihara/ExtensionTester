@@ -11,6 +11,8 @@ function createTest(){
     const toggler = document.createElement("button");
     toggler.innerText = "Toggle Adskipping & muting";
     toggler.onclick = ToggleEverything();
+    toggler.style.left = "100px";
+    toggler.style.top = "100px";
     document.getElementById("body").appendChild(toggler);
 
 }
