@@ -7,6 +7,12 @@ let toggleVar = 1;
 function createTest(){
     const site = window.location.hostname;
     alert("maybe worked: " + site);
+
+    const toggler = document.createElement("button");
+    toggler.innerText = "Toggle Adskipping & muting";
+    toggler.onclick = ToggleEverything();
+    document.getElementById("body").appendChild(toggler);
+
 }
 
 function ToggleEverything(){
