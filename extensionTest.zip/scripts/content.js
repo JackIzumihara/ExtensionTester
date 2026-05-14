@@ -27,7 +27,7 @@ function ToggleEverything(){
 
 let createTestToggle = setTimeout(createTest, 5000);
 let adActiveTest = setInterval(recieveAdActive, 1);
-let adSkipper = setInterval(skipAd, 1);
+let adSkipper = setInterval(skipAd, 6000);
 
     var videoElement = document.querySelector("video"); //this code was found on https://www.matthewgatland.com/journal/2017-11-24-how-to-make-youtube-louder/, it will also be credited in the presentation
     var audioCtx = new AudioContext();
@@ -45,7 +45,8 @@ function unmute(){
 }
 
 function recieveAdActive(){ //yo this is lwk useless bc of the skipAd thing
-        if (document.querySelector("div.ad-showing")) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
+        const video = document.querySelector('video');
+        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
             gainNode.gain.value = 0;
         }
         else {
