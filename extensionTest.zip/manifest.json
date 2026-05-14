@@ -16,7 +16,7 @@
     {
       "js": ["scripts/content.js"],
       "matches": [
-        "<all_urls>"
+        "https://www.youtube.com/*"
       ]
     }
   ]
