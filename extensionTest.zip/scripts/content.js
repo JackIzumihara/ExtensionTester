@@ -2,7 +2,6 @@
 
 let annoyingAdPanel = document.getElementById('panels');
 let progressBar = document.getElementsByClassName('ytp-scrubber-button ytp-swatch-background-color');
-let toggleVar = 1;
 
 function createTest(){
     const site = window.location.hostname;
@@ -10,11 +9,20 @@ function createTest(){
 
     const toggler = document.createElement("button");
     toggler.innerText = "Toggle Adskipping & muting";
-    toggler.addEventListener("click", (e) => {ToggleEverything()});
-    toggler.style.left = "100px";
-    toggler.style.top = "100px";
-    toggler.style.zIndex = "10000000"; //this is probably first now
-    document.getElementById("body").appendChild(toggler);
+    const toggleVar = document.createElement("p");
+    toggleVar.className = "toggleEnable";
+    toggleVar.style.display = "none";
+    document.getElementById("items").appendChild(toggler);
+    toggler.addEventListener("click", (e) => {
+        let isToggled = 1;
+        if(isToggled = 1){
+            toggleVar.className = "toggleDisable";
+            isToggled = 0;
+        }else if(isToggled = 0){
+            toggleVar.className = "toggleEnable";
+            isToggled = 1;
+        }
+    });
 
 }
 
@@ -30,11 +38,11 @@ function ToggleEverything(){
         toggleVar = 1;
         alert("enabled adskipper & muter");
     }else{
-
+        console.log("die");
     }
 }
 
-let createTestToggle = setTimeout(createTest, 5000);
+let createTestToggle = setTimeout(createTest, 3000);
 let adActiveTest = setInterval(recieveAdActive, 1);
 let adSkipper = setInterval(skipAd, 6000);
 
@@ -55,7 +63,7 @@ function unmute(){
 
 function recieveAdActive(){ //yo this is lwk useless bc of the skipAd thing
         const video = document.querySelector('video');
-        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
+        if (video && document.querySelector('.ad-showing, .ad-interrupting') && document.querySelector('.toggleEnable')) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
             gainNode.gain.value = 0;
         }
         else {
@@ -80,7 +88,7 @@ function skipAd() { //also found this function on stackoverflow, might work but 
 
         // Seek through unskippable ads
         const video = document.querySelector('video');
-        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
+        if (video && document.querySelector('.ad-showing, .ad-interrupting') && document.querySelector('.toggleEnable')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
            video.currentTime = video.duration - 5;
        }
     }
