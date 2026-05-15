@@ -7,14 +7,14 @@ function createTest(){
     const site = window.location.hostname;
     alert("maybe worked: " + site);
 
-    const toggler = document.createElement("button");
+    const toggler = document.createElement("button");//this bottom part doesn't work
     toggler.innerText = "Toggle Adskipping & muting";
     const toggleVar = document.createElement("p");
     toggleVar.className = "toggleEnable";
     toggleVar.style.display = "none";
     document.getElementById("items").appendChild(toggler);
     toggler.addEventListener("click", (e) => {
-        let isToggled = 1;
+    let isToggled;
         if(isToggled = 1){
             toggleVar.className = "toggleDisable";
             isToggled = 0;
@@ -26,7 +26,7 @@ function createTest(){
 
 }
 
-function ToggleEverything(){
+function ToggleEverything(){ //basically useless now
     if(toggleVar = 1){
         clearInterval(adSkipper);
         clearInterval(adActiveTest);
@@ -63,7 +63,7 @@ function unmute(){
 
 function recieveAdActive(){ //yo this is lwk useless bc of the skipAd thing
         const video = document.querySelector('video');
-        if (video && document.querySelector('.ad-showing, .ad-interrupting') && document.querySelector('.toggleEnable')) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
+        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //this was also found on stackoverflow, link will also be linked in slideshow (and here too: https://stackoverflow.com/questions/63749340/on-a-youtube-video-page-how-do-i-check-if-the-video-is-currently-playing-an-ad)
             gainNode.gain.value = 0;
         }
         else {
@@ -88,7 +88,7 @@ function skipAd() { //also found this function on stackoverflow, might work but 
 
         // Seek through unskippable ads
         const video = document.querySelector('video');
-        if (video && document.querySelector('.ad-showing, .ad-interrupting') && document.querySelector('.toggleEnable')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
+        if (video && document.querySelector('.ad-showing, .ad-interrupting')) { //the main reason this is usually disabled is because its a little too cheaty and like it kinda just makes youtube in a worse position
            video.currentTime = video.duration - 5;
        }
     }
